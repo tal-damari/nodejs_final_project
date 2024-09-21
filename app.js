@@ -8,6 +8,7 @@ Developers:
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
+require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
@@ -23,15 +24,16 @@ const reportRouter = require('./routes/report');
 
 const app = express();
 
+let uri = process.env.DATABASE_URI
+
 // Connect to mongodb
-mongoose.connect("mongodb://127.0.0.1:27017/AdarTalShirel")
+mongoose.connect(uri)
     .then(() => {
       console.log("Connected To DB Successfully")
     })
     .catch((err) => {
       console.log(err)
     })
-
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
