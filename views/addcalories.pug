@@ -1,0 +1,48 @@
+//-
+    Developers:
+    * Adar Azulay 208545285
+    * Tal Damari 208129643
+    * Shirel Oskar 318572401
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title Add New Calories
+        link(rel="stylesheet", href="/stylesheets/style.css")
+    body
+        h1 Add New Calories
+        form(method="post" action="/addcalories")
+            label(for="user_id") User ID:
+            input(type="text", name="user_id", id="user_id", required)
+            br
+
+            label(for="year") Year:
+            input(type="number", name="year", id="year", required)
+            br
+
+            label(for="month") Month:
+            input(type="number", name="month", id="month", required)
+            br
+
+            label(for="day") Day:
+            input(type="number", name="day", id="day", required)
+            br
+
+            label(for="description") Description:
+            input(type="text", name="description", id="description", required)
+            br
+
+            label(for="category") Category:
+            select(name="category", id="category", required)
+                option(value="breakfast") Breakfast
+                option(value="lunch") Lunch
+                option(value="dinner") Dinner
+                option(value="other") Other
+            br
+
+            label(for="amount") Amount:
+            input(type="number", name="amount", id="amount", required)
+            br
+
+            input(type="submit", value="Add Calories")
